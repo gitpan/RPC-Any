@@ -1,0 +1,4 @@
+1.00_1 Mon Jun 14 2010
+	- First release. Supports JSON-RPC and XML-RPC, HTTP and CGI.
+        - Full Unicode support.
+        - Taint support.
