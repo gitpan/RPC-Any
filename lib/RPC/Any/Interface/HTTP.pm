@@ -104,7 +104,7 @@ RPC::Any::Interface::HTTP - HTTP input/output support for RPC::Any::Server
 
 This module houses code that is common to all the "HTTP" servers
 in RPC::Any (L<RPC::Any::Server::XMLRPC::HTTP>
-and L<RPC::Any::Server::JSONRPC>). RPC::Any HTTP servers understand HTTP
+and L<RPC::Any::Server::JSONRPC::HTTP>). RPC::Any HTTP servers understand HTTP
 input and return HTTP output. This means that HTTP servers expect
 there to be HTTP headers on the input provided to C<handle_input>,
 and they return HTTP headers as part of the return value of C<handle_input>.

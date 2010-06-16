@@ -1,7 +1,7 @@
 package RPC::Any;
 use 5.008001;
 
-our $VERSION = '1.00_1';
+our $VERSION = '1.00_2';
 
 1;
 

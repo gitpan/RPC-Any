@@ -134,7 +134,30 @@ sub get_method {
                          . " contain a package name, followed by a period,"
                          . " followed by a method name.");
     }
+    
+    $self->validate_method_name($method, $full_name);
 
+    my $module = $self->get_module($package);
+    if (!$module) {
+        $self->exception('NoSuchMethod',
+                         "There is no method package named '$package'.");
+    }
+
+    Class::MOP::load_class($module);
+
+    if (!$module->can($method)) {
+        $self->exception('NoSuchMethod',
+                         "There is no method named '$method' in the"
+                         . " '$package' package.");
+    }
+    return { module => $module, method => $method };
+}
+
+# This is factored out into a separate subroutine in case subclasses
+# want to use it in their own get_method implementation.
+sub validate_method_name {
+    my ($self, $method, $full_name) = @_;
+    
     # Don't allow access to private subroutines.
     if ($method =~ /^_/) {
         $self->exception('NoSuchMethod',
@@ -159,21 +182,6 @@ sub get_method {
             "'$method' (from '$full_name') cannot be used as a method name,"
             . " because it is not a valid Perl identifier.");
     }
-    
-    my $module = $self->get_module($package);
-    if (!$module) {
-        $self->exception('NoSuchMethod',
-                         "There is no method package named '$package'.");
-    }
-
-    Class::MOP::load_class($module);
-
-    if (!$module->can($method)) {
-        $self->exception('NoSuchMethod',
-                         "There is no method named '$method' in the"
-                         . " '$package' package.");
-    }
-    return { module => $module, method => $method };
 }
 
 sub get_module {
@@ -349,9 +357,7 @@ immediately before the method is called.
 =head1 HOW RPC METHODS ARE CALLED
 
 When RPC::Any::Server gets a request to call a method, it goes
-through several steps. Let's say that you have a L</dispatch> that
-looks like C<< { 'Foo' => 'Bar::Baz' } >>, and somebody calls the
-C<Foo.something> method.
+through several steps:
 
 =over
 

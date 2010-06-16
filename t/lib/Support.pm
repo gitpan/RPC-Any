@@ -81,8 +81,8 @@ use constant SERVER_TESTS => (
     },
     return_double => {
         method  => 'return_this',
-        params  => 3.14159265,
-        returns => 3.14159265,
+        params  => 2.2,
+        returns => 2.2,
         return_type => 'double',
     },
     return_nil => {
