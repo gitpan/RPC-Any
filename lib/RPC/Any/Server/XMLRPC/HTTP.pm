@@ -1,6 +1,6 @@
 package RPC::Any::Server::XMLRPC::HTTP;
 use Moose;
-use HTTP::Status qw(HTTP_OK);
+use HTTP::Status qw(RC_OK);
 use HTTP::Response;
 use URI::Escape qw(uri_unescape);
 extends 'RPC::Any::Server::XMLRPC';
@@ -42,7 +42,7 @@ sub encode_output_from_object {
     my $response = HTTP::Response->new();
     utf8::encode($output_string) if utf8::is_utf8($output_string);
     $response->header(Content_Length => length $output_string);
-    $response->code(HTTP_OK);
+    $response->code(RC_OK);
     $response->content($output_string);
     $response->protocol($self->last_request ? $self->last_request->protocol
                                             : 'HTTP/1.0');

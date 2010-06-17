@@ -1,7 +1,7 @@
 package RPC::Any;
 use 5.008001;
 
-our $VERSION = '1.00_2';
+our $VERSION = '1.00_3';
 
 1;
 
@@ -64,5 +64,12 @@ Max Kanat-Alexander <mkanat@cpan.org>
 
 Copyright (C) 2010 Everything Solved, Inc.
 
-This library (the entirety of RPC-Any) is free software; you can
-redistribute it and/or modify it under the same terms as Perl itself.
+This library (the entirety of RPC-Any) is free software; you
+can redistribute it and/or modify it under the terms of the
+Artistic License 2.0. For details, see the full text of the
+license at L<http://opensource.org/licenses/artistic-license-2.0.php>.
+
+This program is distributed in the hope that it will be
+useful, but it is provided "as is" and without any express
+or implied warranties. For details, see the full text of the
+license at L<http://opensource.org/licenses/artistic-license-2.0.php>.

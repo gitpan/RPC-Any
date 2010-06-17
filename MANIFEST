@@ -23,6 +23,7 @@ lib/RPC/Any/Server/XMLRPC/HTTP.pm
 Makefile.PL
 MANIFEST			This list of files
 META.yml
+README
 t/010_compile.t
 t/jsonrpc.t
 t/jsonrpc_http.t

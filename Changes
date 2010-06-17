@@ -1,3 +1,6 @@
+1.00_3 Thu Jun 17 2010
+	- Fix up dependencies, licensing, and Makefile.PL
+
 1.00_2 Wed Jun 16 2010
 	- Fix some POD issues.
 	- Modify the "double" tests so that they hopefully will pass on

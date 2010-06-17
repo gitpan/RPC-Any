@@ -10,26 +10,27 @@ configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
 generated_by: 'Module::Install version 0.91'
-license: perl
+license: artistic2
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
+module_name: RPC::Any
 name: RPC-Any
 no_index:
   directory:
     - inc
     - t
 requires:
-  HTTP::Request: 0
-  HTTP::Response: 0
   JSON: 0
   JSON::RPC::Common: 0.07
+  LWP: 5.827
   MIME::Base64: 0
   Moose: 0.65
-  RPC::XML::Parser: 0
+  RPC::XML::ParserFactory: 0
   Scalar::Util: 0
   Taint::Util: 0
   perl: 5.8.1
 resources:
-  license: http://dev.perl.org/licenses/
-version: 1.00_2
+  license: http://opensource.org/licenses/artistic-license-2.0.php
+  repository: bzr://bzr.everythingsolved.com/rpc-any/trunk
+version: 1.00_3
