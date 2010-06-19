@@ -1,11 +1,8 @@
 use strict;
 use inc::Module::Install;
 
-license 'artistic2';
 all_from 'lib/RPC/Any.pm';
-resources
-  license    => 'http://opensource.org/licenses/artistic-license-2.0.php',
-  repository => 'bzr://bzr.everythingsolved.com/rpc-any/trunk';
+repository 'bzr://bzr.everythingsolved.com/rpc-any/trunk';
 
 requires 'Scalar::Util';
 requires 'Taint::Util';

@@ -1,12 +1,5 @@
-1.00_3 Thu Jun 17 2010
-	- Fix up dependencies, licensing, and Makefile.PL
-
-1.00_2 Wed Jun 16 2010
-	- Fix some POD issues.
-	- Modify the "double" tests so that they hopefully will pass on
-          FreeBSD.
-
-1.00_1 Mon Jun 14 2010
-	- First release. Supports JSON-RPC and XML-RPC, HTTP and CGI.
+1.00 Sat Jun 19 2010
+	- First stable release. Supports JSON-RPC and XML-RPC, HTTP and CGI.
+	- Near 100% test coverage.
         - Full Unicode support.
         - Taint support.
